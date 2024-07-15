@@ -29,6 +29,12 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="Welcome" options={{ headerShown: false }} />
+        <Stack.Screen name="EyeResponseScan" options={{ headerShown: false }} />
+        <Stack.Screen name="camera" options={{ headerShown: false }} />
+       
+        <Stack.Screen name="GCSTest" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>

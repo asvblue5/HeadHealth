@@ -13,13 +13,31 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.srinjayverma.ccApp",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs access to location when open to find nearby hospitals.",
+        "NSLocationAlwaysUsageDescription": "This app needs access to location when in the background to find nearby hospitals.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to the photo library to save and share screenshots.",
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#ffffff",
+        "permissions": [
+          "ACCESS_COARSE_LOCATION",
+          "ACCESS_FINE_LOCATION",
+          "CAMERA",
+          "READ_EXTERNAL_STORAGE",
+          "WRITE_EXTERNAL_STORAGE",
+          "SMS"
+        ]
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -27,10 +45,25 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera.",
+          "microphonePermissionText": "$(PRODUCT_NAME) needs access to your Microphone."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "d85d5667-abd5-4710-806d-31f999dd7c47"
+      }
     }
   }
 }
